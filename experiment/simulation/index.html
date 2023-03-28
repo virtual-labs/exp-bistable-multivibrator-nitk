@@ -1,13 +1,254 @@
+<!-- Home page of simulator -->
 <!DOCTYPE html>
-<html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+<html lang="en">
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src='https://cdn.plot.ly/plotly-2.12.1.min.js'></script>
+    <title>Virtual Lab</title>
+    <script src='https://cdn.plot.ly/plotly-2.18.2.min.js'></script>
+</head>
+
+<body>
+    <!-- simulation -->
+    <div class="simulation" id="simulation">
+        <div class="topic">
+            <h2>Monostable and Bistable Multivibrator</h2>
+        </div>
+        <div id="content">
+            <div class="subtopics">
+                <h4>Objective:</h4>
+                <ol>
+                    <li>&ensp;To understand monostable and bistable multivibrators and obtain their output waveforms.</li>
+                </ol>
+                <h4>Apparatus Used:</h4>
+                <p>Diode, Capacitors, Resistors, Oscilloscope, Breadboard, Wires, Voltmeter.</p>
+            </div>
+            <div id="paper" style="position: absolute;background-color: black;"></div>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <p>Diode</p><img class='diode' src="images/diode.png" alt="diode">
+                </div>
+                <div class="grid-item">
+                    <p>Capacitor</p><img class='capacitor' src="images/capacitor.png" alt="capacitor">
+                </div>
+                <div class="grid-item">
+                    <p>Resistors</p><img class='resistor' src="images/resistor.png" alt="resistor">
+                </div>
+                <div class="grid-item">
+                    <p>Op Amp</p><img class='opamp' src="images/opamp.png" alt="opamp">
+                </div>
+                <div class="grid-item">
+                    <p>Oscilloscope</p><img class='scope' src="images/oscilloscope.png" alt="oscilloscope">
+                </div>
+                <div class="grid-item">
+                    <p>Breadboard</p><img class='board' src="images/breadboard.png" alt="breadboard">
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- content2 -->
+        <div style="display: none;" id="content2">
+            <div class="blocker" onclick="closeobservation()" id="blocker"></div>
+
+            <div class="simoptions" id="simoptions">
+                <div class="procedure">
+                    <label style="text-align:left;" >Choose the circuit :</label><br>
+                    <select name="exp" id="exp" onChange="update()">
+                        <option value="Empty" hidden>Select the circuit</option>
+                        <option value="bjt">Monostable Multivibrator</option>
+                        <option value="opamp">Bistable Multivibrator</option>
+                    </select>
+                </div>
+                <div class="values">
+                    <label id="resistance" style="text-align: left;" >Resistance R(kΩ)</label>
+                       <select id="exp1" name="exp1" step="any"  onchange="resist()"disabled>
+                        <option value="Empty" hidden>Select the Resistance</option>
+                        <option id="mono" style="visibility: hidden;" value="15" >15K</option>
+                        <option id="mono1" style="visibility: hidden;" value="18">18K</option>
+                        <option id="mono2" style="visibility: hidden;" value="20">20K</option>
+                    </select>
+                    <p id="R1" style="position:absolute;font-family:Verdana;font-size:14pz;left:691px;top:291px;width:59%;visibility:hidden;">= 1K</p>
+                    <p id="R2" style="position:absolute;font-family:Verdana;font-size:14pz;left:693px;top:398px;width:59%;visibility:hidden;">= 10K</p>
+
+                    <p id="RB1" style="position:absolute;font-family:Verdana;font-size:14pz;left:494px;top:362px;width:59%;visibility:hidden;">= 1K</p>
+                    <p id="RB2" style="position:absolute;font-family:Verdana;font-size:14pz;left:599px;top:346px;width:59%;visibility:hidden;">= 10K</p>
+                    <p id="RB3" style="position:absolute;font-family:Verdana;font-size:14pz;left:349px;top:81px;width:59%;visibility:hidden;">= 1μF</p>
+                    <p id="RB4" style="position:absolute;font-family:Verdana;font-size:14pz;left:599px;top:346px;width:59%;visibility:hidden;">= 1K</p>
+                    <!-- <select id="exp1a" name="exp1a" step="any" style="position: absolute;left: 10px;top: 91px;" onchange="resist()"disabled>
+                        
+                        <option value="Empty" hidden>Select the Resistance</option>
+                    <option id="bio" style="visibility: hidden;" value="1" >1K</option>
+                    <option id="bio1" style="visibility: hidden;" value="2">2K</option>
+                    <option id="bio2" style="visibility: hidden;" value="3">3K</option>
+                </select> -->
+                    </div>  
+
+                    
+                    <!-- <select id="exp1a" name="exp1a" step="any" onchange="resist()"disabled>
+                        <option id="bio" style="visibility: hidden;" value="1" >1K</option>
+                        <option id="bio1" style="visibility: hidden;" value="2">2K</option>
+                        <option id="bio2" style="visibility: hidden;" value="3">3K</option>
+                        </select> -->
+
+                    <!-- <div class="values">
+                        <label style="text-align: left; " >Resistance(kΩ)</label>
+                           <select id="bres" name="bres" step="any" onchange="resist()"disabled>
+                            <option value="Empty" id="bio" style="visibility: hidden;" hidden>Select the circuit</option>
+                            <option value="1" >1K</option>
+                            <option value="2">2K</option>
+                            <option value="3">3K</option></select>
+                        </div>   -->
+                    
+                    <div class="values">
+                        <label id="Capacitance" style="text-align: left;">Capacitance(μF)</label>
+                           <select id="exp2" name="exp2" step="any" onchange="resist()" disabled>
+                             <option value="Empty" hidden>Select the Capacitance</option>
+                            <option  onclick="storeNumber();discap()" value="bjt">1</option>
+                            </select>
+                        </div>    
+
+                    <!-- <input type="number" id="resvalue" name="resvalue" step="any" oninput="validity.valid||(value='')"; disabled >  -->
+                    <!-- <button id="ok1" onclick="storeNumber();disres()" disabled>OK</button><br><br> -->
+                    <!-- <div class="values">
+                    <label style="text-align: left;">Capacitance(μF)</label>
+                    <select name="exp" id="exp"> <option value="Empty" hidden>Select the circuit</option>
+                        <option value="bjt">1K</option>
+                    </div> -->
+                    <!-- <input type="number" id="capvalue" name="capvalue" step="any" oninput="validity.valid||(value='')"; disabled >
+                    <button id="ok2" onclick="storeNumber();discap()" disabled>OK</button> -->
+
+            
+
+                <div class="insert-reset-observation">
+                    <button id="insert" type="button" onclick="insert()" disabled>Trigger Button On</button>
+                    <button id="remove" type="button" onclick="remove()" style="display:none;font-size: 12px;">Trigger Button off</button>
+                </div>
+
+                <div class="insert-reset-observation">
+                    <button id="addbutton" type="button" onclick="AddingToArray()" disabled>Add to Table</button>
+
+                </div>
+                <div class="insert-reset-observation">
+                    <button id="observationbutton" type="button" onclick="openobservation()"
+                        disabled>Observations</button>
+                </div>
+                <div class="insert-reset-observation">
+                    <button id="finalresult" type="button" onclick="fresult()" disabled>Show Result</button>
+                </div>
+                <div class="result" style="text-align: left;">
+                    <br>
+                    <label>Theoretical (ms)</label><br>
+                    <span id="tfreq"></span><br>
+                    <label>Practical (ms)</label><br>
+                    <span id="pfreq"></span><br>
+                </div>
+                <div class="insert-reset-observation">
+                    <button id="reset" type="reset" onclick="Refresh()">Reset</button>
+                </div>
+                <div class="help">
+                    <button type="button" onclick="help()"><img src="images/help.png" alt="helpicon"></button>
+                </div>
+            </div>
+
+            <!-- simulation -->
+            <div class="mainsimulation" id="mainsimulation">
+                <span id="Rfvalue" style="display:none ;"></span>
+                <p id="add">Values added to observation!</p>
+                <p id="addres">Resistance added!</p>
+                <p id="addcap">Capactiance added!</p>
+                <img class="circuit" id="ibjt" src="images/monostable_multivibrator.png" alt="PSOwithBJT" style="display:none ;">
+                <img class="circuit" id="ibjt1" src="images/monostable_multivibratorwithtrigger.png" alt="PSOwithBJT" style="display:none ;">
+                <img class="circuitb" id="iopamp" src="images/bistable_multivibrator_withouttriger.png" alt="PSOwithopamp" style="display:none ;">
+                <img class="circuitb" id="iopamp1" src="images/bistable_multivibrator.png" alt="PSOwithopamp" style="display:none ;">
+             
+                <button type="button" id="view" onclick="IBgraph()" style="width: 100px;display:none;margin-left: 450px;margin-top: 41px;">View graph</button>
+               
+                <button type="button" id="view1" onclick="IBgraph1()" style="width: 100px;display:none;margin-left: 450px;margin-top: 41px;">View graph</button>
+                <button type="button" id="view2" onclick="IBgraph2()" style="width: 100px;display:none;margin-left: 450px;margin-top: 41px;">View graph</button>
+                <button type="button" id="view3" onclick="IBgraph3()" style="width: 100px;display:none;margin-left: 450px;margin-top: 41px;">View graph</button>
+                <div id="myDiv"></div>
+            </div>
+            <div id="instructions">
+                <div class="icontent">
+                    <h4>Instructions</h4>
+                    <ol>
+                        <li>The screen of the simulator will display the objective, apparatus, theory and procedure.</li>
+                        <li>Click the NEXT button, and the simulator will display the option to Select the type of Multivibrator (Monostable/Bistable).</li>
+                        <li>Display the corresponding circuit.</li>
+                        <li>Display the option to choose the Resistance and Capacitance.</li>
+                        <li>Click on ‘Turn On’ button to connect the circuit to CRO.</li>
+                        <li>Click On ‘View Graph’ button to display the waveform.</li>
+                        <li>Display the frequency of the waveform (for Bistable multivibrator)
+                            Display the Quasi stable state time (for Monostable multivibrator)</li>
+                        <li>Click on ‘Add to Table’ button to store the data.</li>
+                        <li>Click on ‘Observations’ to show the tabular column.</li>
+                        <li>Click on ‘Show result button’ to display the result.</li>
+                        <li>Click on Reset button to “reset’.</li>
+                </div>
+                <button type="button" onclick="closeobservation()">Close</button>
+            </div>
+            <div id="IBgraph">
+                <div id="myChart"></div>
+                <img id="arrow15" style="position: absolute; visibility: hidden;margin-left: 208px;margin-top: -295px;" src="images/arrow_15.png"/>
+                <img id="arrow18" style="position: absolute; visibility: hidden;margin-left: 255px;margin-top: -295px;" src="images/arrow_18.png"/>
+                <img id="arrow20" style="position: absolute; visibility: hidden;margin-left: 264px;margin-top: -295px;" src="images/arrow_20.png"/>
+                <img id="arrowB" style="position: absolute; visibility: hidden;margin-left: 208px;margin-top: -295px;" src="images/arrow_15.png"/>
+                <img id="arrowB1" style="position: absolute; visibility: hidden;margin-left: 397px;margin-top: -295px;" src="images/arrow_15.png"/>
+
+
+                <p id="x1" style="position:absolute;font-family:Verdana;font-size:14pz;left:585px;top:20px;visibility:hidden;">T = 10.3ms</p>
+                <p id="x2" style="position:absolute;font-family:Verdana;font-size:14pz;left:585px;top:42px;visibility:hidden;">Volt + = +15V</p>
+                <p id="x3" style="position:absolute;font-family:Verdana;font-size:14pz;left:585px;top:65px;visibility:hidden;">Volt - = -15V</p>
+
+                <p id="y1" style="position:absolute;font-family:Verdana;font-size:14pz;left:585px;top:20px;visibility:hidden;">T = 15ms</p>
+                <p id="y2" style="position:absolute;font-family:Verdana;font-size:14pz;left:585px;top:42px;visibility:hidden;">Volt + = +15V</p>
+                <p id="y3" style="position:absolute;font-family:Verdana;font-size:14pz;left:585px;top:65px;visibility:hidden;">Volt - = -15V</p>
+
+                <p id="z1" style="position:absolute;font-family:Verdana;font-size:14pz;left:585px;top:20px;visibility:hidden;">T = 18ms</p>
+                <p id="z2" style="position:absolute;font-family:Verdana;font-size:14pz;left:585px;top:42px;visibility:hidden;">Volt + = +15V</p>
+                <p id="z3" style="position:absolute;font-family:Verdana;font-size:14pz;left:585px;top:65px;visibility:hidden;">Volt - = -15V</p>
+
+                <!-- <p id="s1" style="position:absolute;font-family:Verdana;font-size:14pz;left:585px;top:20px;visibility:hidden;">T = 18ms</p> -->
+                <p id="s2" style="position:absolute;font-family:Verdana;font-size:14pz;left:585px;top:42px;visibility:hidden;">Volt + = +15V</p>
+                <p id="s3" style="position:absolute;font-family:Verdana;font-size:14pz;left:585px;top:65px;visibility:hidden;">Volt - = -15V</p>
+                <button onclick="closeobservation()">Close</button>
+            </div>
+
+            <!-- ib table  -->
+            <div class="observation" id="IBobservation">
+                <div class="tablediv" id="IBtablediv">
+                    <table class="observationTable" id="IBobservationTable">
+                        <tr>
+                            <th>Capacitance(μF)</th>
+                            <th>Resistance(kΩ)</th>
+                            <th>T (Theoretical (ms))</th>
+                            <th>T (Practical (ms))</th>
+                            <th>Error(%)</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tableObservation" id="IBtableObservation">
+                    <button type="button" onclick="closeobservation()">Close</button>
+                    <button type="button" onclick="clearing()" style="width: 70px;">Clear All</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- content3 -->
+        <div style="display: none;" id="content3">
+            <div id="graph"></div>
+        </div>
+
+        <!-- next button -->
+        <button id="buttonup" onclick="up()"><img class="nextimg" src="images/arrow.png" alt="arrow"></button>
+        <button id="buttondown" onclick="down()"><img class="nextimg" src="images/arrow.png" alt="arrow"></button>
+    </div>
+        <script src="js/script.js"></script>
 </body>
 </html>
