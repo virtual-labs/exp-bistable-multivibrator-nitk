@@ -108,6 +108,10 @@ function update() {
         document.getElementById('tfreq').style.visibility = "visible";
         document.getElementById('pfreq').style.visibility = "visible"
         document.getElementsByClassName('result')[0].style.visibility="visible";
+
+        document.getElementById('RB1').style.visibility="hidden";
+        document.getElementById('RB2').style.visibility="hidden";
+        document.getElementById('RB3').style.visibility="hidden";
        res = 15;
 
         pcheck= true;
@@ -139,9 +143,7 @@ function update() {
         document.getElementsByClassName('result')[0].style.visibility="hidden";
         // document.getElementById("exp").disabled = false;
         document.getElementById("insert").disabled = false;
-        document.getElementById('RB1').style.visibility="visible";
-        document.getElementById('RB2').style.visibility="visible";
-        document.getElementById('RB3').style.visibility="visible";
+       
         // document.getElementById('RB4').style.visibility="visible";
         // document.getElementById('view').style.visibility = "hidden";
         // document.getElementById('view1').style.visibility = "hidden";
@@ -161,10 +163,9 @@ function resist() {
 
     if (option == '15') {
         document.getElementById("insert").disabled = false;
-        document.getElementById("addbutton").disabled = false;
-        document.getElementById("observationbutton").disabled = false;
-        document.getElementById('R1').style.visibility="visible";
-        document.getElementById('R2').style.visibility="visible";
+        // document.getElementById("addbutton").disabled = false;
+        // document.getElementById("observationbutton").disabled = false;
+       
         res = 15;
         cap = 1;
         tfreq = 10.395;
@@ -177,10 +178,9 @@ console.log('hi')
     else if (option == '18') {
         console.log('bi')
         document.getElementById("insert").disabled = false;
-        document.getElementById("addbutton").disabled = false;
-        document.getElementById("observationbutton").disabled = false;
-        document.getElementById('R1').style.visibility="visible";
-        document.getElementById('R2').style.visibility="visible";
+        // document.getElementById("addbutton").disabled = false;
+        // document.getElementById("observationbutton").disabled = false;
+       
         
         res = 18;
         cap = 1;
@@ -195,10 +195,9 @@ console.log('hi')
     else if (option == '20') {
         console.log('hlo')
      document.getElementById("insert").disabled = false;
-      document.getElementById("addbutton").disabled = false;
-    document.getElementById("observationbutton").disabled = false;
-    document.getElementById('R1').style.visibility="visible";
-        document.getElementById('R2').style.visibility="visible";
+    //   document.getElementById("addbutton").disabled = false;
+    // document.getElementById("observationbutton").disabled = false;
+   
     res = 20;
     cap = 1;
     tfreq = 13.86;
@@ -219,7 +218,7 @@ function insert() {
     document.getElementById("exp").disabled = true;
     
     document.getElementById("addbutton").disabled = false;
-    document.getElementById("observationbutton").disabled = false;
+    // document.getElementById("observationbutton").disabled = false;
     document.getElementById("exp1").disabled = true;
     document.getElementById("exp2").disabled = true;
 
@@ -238,6 +237,8 @@ function insert() {
         document.getElementById("ibjt1").style.display = 'block';  
         document.getElementById("ibjt").style.display = 'none';
         document.getElementById("view").style.display='block';
+        document.getElementById('R1').style.visibility="visible";
+        document.getElementById('R2').style.visibility="visible";
         document.getElementById('arrow15').style.visibility="visible";
         document.getElementById('arrow18').style.visibility="hidden";
         document.getElementById('arrow20').style.visibility="hidden";
@@ -252,7 +253,8 @@ console.log('hi chethu')
         document.getElementById('arrow20').style.visibility="hidden";
         document.getElementById("ibjt1").style.display = 'block';  
         document.getElementById("ibjt").style.display = 'none';
-        // document.getElementById("view1").style.display='block';
+        document.getElementById('R1').style.visibility="visible";
+        document.getElementById('R2').style.visibility="visible";
         document.getElementById("iopamp").style.display = 'none';
         document.getElementById("iopamp1").style.display = 'none';
         console.log('hi chethudevadiga')
@@ -266,6 +268,8 @@ console.log('hi chethu')
         document.getElementById('arrow15').style.visibility="hidden";
         document.getElementById("iopamp").style.display = 'none';
         document.getElementById("iopamp1").style.display = 'none';
+        document.getElementById('R1').style.visibility="visible";
+        document.getElementById('R2').style.visibility="visible";
  }
     else if (pcheck==false) {
         document.getElementById("ibjt").style.display = 'none';
@@ -273,12 +277,9 @@ console.log('hi chethu')
         document.getElementById("iopamp").style.display = 'none';
         document.getElementById("iopamp1").style.display = 'block';
         console.log('vlab')
-        // document.getElementById('addbutton').style.visibility = "hidden"
-        // document.getElementById('observationbutton').style.visibility = "hidden";
-        // document.getElementById('finalresult').style.visibility = "hidden"
-        // document.getElementById('tfreq').style.visibility = "hidden";
-        // document.getElementById('pfreq').style.visibility = "hidden"
-        // document.getElementsByClassName('result')[0].style.visibility="hidden";
+        document.getElementById('RB1').style.visibility="visible";
+        document.getElementById('RB2').style.visibility="visible";
+        document.getElementById('RB3').style.visibility="visible";
         document.getElementById("view3").style.display='block';
         document.getElementById('arrowB').style.visibility="visible";
         document.getElementById('arrowB1').style.visibility="visible";
@@ -293,9 +294,13 @@ function remove() {
     document.getElementById("view").style.display='none';
     document.getElementById("view1").style.display='none';
     document.getElementById("view2").style.display='none';
+    document.getElementById('R1').style.visibility="hidden";
+    document.getElementById('R2').style.visibility="hidden";
 
    // document.getElementById("observationbutton").disabled = true;
     document.getElementById("addbutton").disabled = true;
+    document.getElementById("observationbutton").disabled = true;
+    document.getElementById("finalresult").disabled = true;
 
     document.getElementById("exp1").disabled = false;
     document.getElementById("exp2").disabled = false;
@@ -309,7 +314,7 @@ function remove() {
         document.getElementById("iopamp").style.display = 'none';
         document.getElementById("iopamp1").style.display = 'none';
     }
-        // document.getElementById("view").style.display = 'block';
+        
     if (option == '15') {
         document.getElementById("ibjt").style.display = 'block';
         document.getElementById("ibjt1").style.display = 'none';
@@ -336,6 +341,9 @@ console.log('hi c15')
         document.getElementById("iopamp").style.display = 'block';
         document.getElementById("iopamp1").style.display = 'none';
         document.getElementById("view3").style.display='none';
+        document.getElementById('RB1').style.visibility="hidden";
+        document.getElementById('RB2').style.visibility="hidden";
+        document.getElementById('RB3').style.visibility="hidden";
     }
 
     //document.getElementById("Rfvalue").style.display="block";
@@ -408,6 +416,7 @@ function closeobservation() {
 }
 
 function AddingToArray() {
+        document.getElementById("observationbutton").disabled = false;
         ibXarray.push(parseFloat(cap));
         ibXarray.push(parseFloat(res));
         ibXarray.push(pfreq);
@@ -420,6 +429,7 @@ function AddingToArray() {
 
 
 function addobservation() {
+        document.getElementById("finalresult").disabled = false;
         magcount += 1;
         ibtable = document.getElementById("IBobservationTable");
         ibrow = ibtable.insertRow(magcount + 1);
