@@ -23,10 +23,10 @@
             <div class="subtopics">
                 <h4>Objective:</h4>
                 <ol>
-                    <li>&ensp;To understand monostable and bistable multivibrators and obtain their output waveforms.</li>
+                    <li>&ensp;To understand the working of monostable and bistable multivibrators and to analyze their output.</li>
                 </ol>
                 <h4>Apparatus Used:</h4>
-                <p>Diode, Capacitors, Resistors, Oscilloscope, Breadboard, Wires, Voltmeter.</p>
+                <p>Diode, Capacitor, Resistors, Op Amp, Oscilloscope, Breadboard</p>
             </div>
             <div id="paper" style="position: absolute;background-color: black;"></div>
             <div class="grid-container">
@@ -73,57 +73,22 @@
                         <option id="mono1" style="visibility: hidden;" value="18">18K</option>
                         <option id="mono2" style="visibility: hidden;" value="20">20K</option>
                     </select>
-                    <p id="R1" style="position:absolute;font-family:Verdana;font-size:14pz;left:691px;top:291px;width:59%;visibility:hidden;">= 1K</p>
-                    <p id="R2" style="position:absolute;font-family:Verdana;font-size:14pz;left:693px;top:398px;width:59%;visibility:hidden;">= 10K</p>
+                    <p id="R1" style="position:absolute;font-family:Verdana;font-size:14pz;left:729px;top:291px;width:59%;visibility:hidden;">= 1K</p>
+                    <p id="R2" style="position:absolute;font-family:Verdana;font-size:14pz;left:727px;top:398px;width:59%;visibility:hidden;">= 1K</p>
 
                     <p id="RB1" style="position:absolute;font-family:Verdana;font-size:14pz;left:494px;top:362px;width:59%;visibility:hidden;">= 1K</p>
                     <p id="RB2" style="position:absolute;font-family:Verdana;font-size:14pz;left:599px;top:346px;width:59%;visibility:hidden;">= 10K</p>
                     <p id="RB3" style="position:absolute;font-family:Verdana;font-size:14pz;left:349px;top:81px;width:59%;visibility:hidden;">= 1μF</p>
                     <p id="RB4" style="position:absolute;font-family:Verdana;font-size:14pz;left:599px;top:346px;width:59%;visibility:hidden;">= 1K</p>
-                    <!-- <select id="exp1a" name="exp1a" step="any" style="position: absolute;left: 10px;top: 91px;" onchange="resist()"disabled>
-                        
-                        <option value="Empty" hidden>Select the Resistance</option>
-                    <option id="bio" style="visibility: hidden;" value="1" >1K</option>
-                    <option id="bio1" style="visibility: hidden;" value="2">2K</option>
-                    <option id="bio2" style="visibility: hidden;" value="3">3K</option>
-                </select> -->
-                    </div>  
+                   </div>  
 
-                    
-                    <!-- <select id="exp1a" name="exp1a" step="any" onchange="resist()"disabled>
-                        <option id="bio" style="visibility: hidden;" value="1" >1K</option>
-                        <option id="bio1" style="visibility: hidden;" value="2">2K</option>
-                        <option id="bio2" style="visibility: hidden;" value="3">3K</option>
-                        </select> -->
-
-                    <!-- <div class="values">
-                        <label style="text-align: left; " >Resistance(kΩ)</label>
-                           <select id="bres" name="bres" step="any" onchange="resist()"disabled>
-                            <option value="Empty" id="bio" style="visibility: hidden;" hidden>Select the circuit</option>
-                            <option value="1" >1K</option>
-                            <option value="2">2K</option>
-                            <option value="3">3K</option></select>
-                        </div>   -->
-                    
-                    <div class="values">
+                     <div class="values">
                         <label id="Capacitance" style="text-align: left;">Capacitance(μF)</label>
                            <select id="exp2" name="exp2" step="any" onchange="resist()" disabled>
                              <option value="Empty" hidden>Select the Capacitance</option>
                             <option  onclick="storeNumber();discap()" value="bjt">1</option>
                             </select>
                         </div>    
-
-                    <!-- <input type="number" id="resvalue" name="resvalue" step="any" oninput="validity.valid||(value='')"; disabled >  -->
-                    <!-- <button id="ok1" onclick="storeNumber();disres()" disabled>OK</button><br><br> -->
-                    <!-- <div class="values">
-                    <label style="text-align: left;">Capacitance(μF)</label>
-                    <select name="exp" id="exp"> <option value="Empty" hidden>Select the circuit</option>
-                        <option value="bjt">1K</option>
-                    </div> -->
-                    <!-- <input type="number" id="capvalue" name="capvalue" step="any" oninput="validity.valid||(value='')"; disabled >
-                    <button id="ok2" onclick="storeNumber();discap()" disabled>OK</button> -->
-
-            
 
                 <div class="insert-reset-observation">
                     <button id="insert" type="button" onclick="insert()" disabled>Trigger Button On</button>

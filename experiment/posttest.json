@@ -2,38 +2,91 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": " Monostable multivibrators can be used as",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "pulse generator",
+        "b": "pulse stretcher",
+        "c": "pulse looser",
+        "d": "pulse motor"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "A multivibrator is an electronic circuit used to implement ____________",
+      "answers": {
+        "a": "Oscillator",
+        "b": "Timer",
+        "c": "Flip-flop",
+        "d": "All of the Mentioned"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Multivibrators are characterized by ____________",
+      "answers": {
+        "a": "Registers",
+        "b": "Capacitors",
+        "c": "Transistors",
+        "d": "All of the Mentioned"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Consider the Monostable circuit given below.",
+        "img": "images/monostable.png",
+        "text": "given R=15k , R1=R2=1k  and C =1µF. What is the quasi-state time T?",
+      "answers": {
+        "a": "10.3 ms",
+        "b": "15 ms",
+        "c": "12 ms",
+        "d": "20 ms"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "A bistable multivibrator is a",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "free running oscillator",
+        "b": "triggered oscillator",
+        "c": "sawtooth wave generator",
+        "d": "crystal oscillator "
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "b",
+      "difficulty": "advanced"
     }
-  ]
+    ]
 }
