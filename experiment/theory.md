@@ -5,7 +5,7 @@
  A multivibrator generates non-sinusoidal waves such as square waves, rectangular waves, saw tooth waves, etc. Multivibrators are used as frequency generators, frequency dividers, and generators of time delays and as memory elements in computers, etc. 
 
 **1. Monostable Multivibrator using Op-Amp**   
- This kind of multivibrator is one in which one of the states is stable, but the other state is unstable (transient). A trigger pulse causes the circuit to enter an unstable state. After entering the unstable state, the circuit will return to the stable state after a set time. Such a circuit is useful for creating a timing period of fixed duration in response to some external event.  The feedback from the output is fed to the non-inverting terminal. Hence, feedback is positive. Consider there are two saturation states <img width=250 src="images/fm2.png" />
+ This kind of multivibrator is one in which one of the states is stable, but the other state is unstable (transient). A trigger pulse causes the circuit to enter an unstable state. After entering the unstable state, the circuit will return to the stable state after a set time. Such a circuit is useful for creating a timing period of fixed duration in response to some external event.  The feedback from the output is fed to the non-inverting terminal. Hence, feedback is positive. Consider there are two saturation states <img width=150 src="images/fm2.png" />
 
 <center>
     
