@@ -11,8 +11,8 @@
 <li >Bell, David A. &quot; Electronic devices and circuits.&quot; Reston: Reston Publ. Comp (1980).</li>
 </ol>
 </td>
-<td>Developer : Dr. Ajith K M | NITK
-    Developer : Dr. K V Gangadharan | NITK</br></br>
+<td>
+Developer : Dr. Ajith K M | NITK</br> Developer : Dr. K V Gangadharan | NITK</br></br>
 Contributors :
 <ul style="list-style-type: none;">
 <li> Shwetha              | NITK</li>
