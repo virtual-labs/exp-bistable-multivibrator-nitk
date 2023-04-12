@@ -1,0 +1,46 @@
+
+/home/runner/work/exp-bistable-multivibrator-nitk/exp-bistable-multivibrator-nitk/experiment/simulation/js/script.js
+    1:5   warning  'hvoltage' is assigned a value but never used                    no-unused-vars
+   13:5   warning  'resistance' is defined but never used                           no-unused-vars
+   14:5   warning  'rows' is defined but never used                                 no-unused-vars
+   15:5   warning  'mres' is defined but never used                                 no-unused-vars
+   16:5   warning  'Empty' is defined but never used                                no-unused-vars
+   31:10  warning  'selection' is defined but never used                            no-unused-vars
+   32:9   warning  'option' is not defined                                          no-undef
+   35:16  warning  'option' is not defined                                          no-undef
+   43:10  warning  'up' is defined but never used                                   no-unused-vars
+   48:10  warning  'down' is defined but never used                                 no-unused-vars
+   71:9   warning  'plotting' is not defined                                        no-undef
+   76:10  warning  'update' is defined but never used                               no-unused-vars
+  159:10  warning  'resist' is defined but never used                               no-unused-vars
+  215:10  warning  'insert' is defined but never used                               no-unused-vars
+  372:8   warning  Expected a conditional expression and instead saw an assignment  no-cond-assign
+  372:8   warning  Unexpected constant condition                                    no-constant-condition
+  372:8   warning  'option' is not defined                                          no-undef
+  383:13  warning  Expected a conditional expression and instead saw an assignment  no-cond-assign
+  383:13  warning  Unexpected constant condition                                    no-constant-condition
+  383:13  warning  'option' is not defined                                          no-undef
+  396:10  warning  'Refresh' is defined but never used                              no-unused-vars
+  398:2   warning  Unnecessary semicolon                                            no-extra-semi
+  400:10  warning  'openobservation' is defined but never used                      no-unused-vars
+  418:10  warning  'AddingToArray' is defined but never used                        no-unused-vars
+  473:10  warning  'disres' is defined but never used                               no-unused-vars
+  477:10  warning  'discap' is defined but never used                               no-unused-vars
+  599:10  warning  'IBgraph' is defined but never used                              no-unused-vars
+  653:11  warning  'Plotly' is not defined                                          no-undef
+  657:14  warning  'IBgraph1' is defined but never used                             no-unused-vars
+  677:16  warning  Unexpected comma in middle of array                              no-sparse-arrays
+  710:11  warning  'Plotly' is not defined                                          no-undef
+  713:14  warning  'IBgraph2' is defined but never used                             no-unused-vars
+  765:15  warning  'Plotly' is not defined                                          no-undef
+  769:14  warning  'IBgraph3' is defined but never used                             no-unused-vars
+  828:7   warning  'Plotly' is not defined                                          no-undef
+  850:10  warning  'help' is defined but never used                                 no-unused-vars
+  854:5   warning  'result' is defined but never used                               no-unused-vars
+  878:10  warning  'fresult' is defined but never used                              no-unused-vars
+  882:10  warning  'storeNumber' is defined but never used                          no-unused-vars
+  891:10  warning  'equation' is defined but never used                             no-unused-vars
+
+✖ 40 problems (0 errors, 40 warnings)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+
