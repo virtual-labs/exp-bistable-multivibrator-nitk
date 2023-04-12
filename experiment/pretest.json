@@ -70,12 +70,12 @@
       "difficulty": "advanced"
     },
     {
-      "question": "The bistable circuit is also known as ____________",
+      "question": "How many types of multivibrators are?",
       "answers": {
-        "a": "Latch",
-        "b": "Gate",
-        "c": "Flip-flop",
-        "d": "Bidirectional circuit"
+        "a": "2",
+        "b": "4",
+        "c": "5",
+        "d": "3"
       },
       "explanations": {
         "a": "",
@@ -83,7 +83,7 @@
         "c": "",
         "d": ""
       },
-      "correctAnswer": "c",
+      "correctAnswer": "d",
       "difficulty": "intermediate"
     }
   ]

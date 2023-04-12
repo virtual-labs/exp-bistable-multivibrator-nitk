@@ -53,14 +53,12 @@
       "difficulty": "intermediate"
     },
     {
-      "question": "Consider the Monostable circuit given below.",
-        "img": "images/monostable.png",
-        "text": "given R=15k , R1=R2=1k  and C =1µF. What is the quasi-state time T?",
+      "question": "The bistable circuit is also known as ____________.",
       "answers": {
-        "a": "10.3 ms",
-        "b": "15 ms",
-        "c": "12 ms",
-        "d": "20 ms"
+        "a": "Latch",
+        "b": "Gate",
+        "c": "Flip-flop",
+        "d": "Bidirectional circuit"
       },
       "explanations": {
         "a": "",
@@ -68,7 +66,7 @@
         "c": "",
         "d": ""
       },
-      "correctAnswer": "a",
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
