@@ -1,3 +1,184 @@
+
+const quizDiv = document.querySelector(".quiz-div");
+const questionDiv = document.querySelector(".question");
+const answersDiv = document.querySelector(".answers");
+const questionBtnDiv = document.querySelector(".question-btn");
+const practiceDiv = document.querySelector(".practice");
+const canvas = document.querySelector("#simscreen");
+// const ctx = canvas.getContext("2d");
+let currentStepCount = 1;
+let currentStep;
+let currentQuestions;
+let currentQuestionIndex = 0;
+
+let animationFrameID;
+// stepNo & Step TITLE
+const stepNumber = document.querySelector(".practice-step-no");
+const stepTitle = document.querySelector(".practice-step-info");
+
+// buttons
+const btnAxis = document.querySelector(".btn-axis");
+// btnAxis.addEventListener("click", drawAxis);
+const btnVPHP = document.querySelector(".btn-vp-hp");
+
+
+const btnA = document.querySelector('.btn-A');
+
+const btnBB = document.querySelector('.btn-B');
+
+const btnB1 = document.querySelector('.btn-B1');
+
+const btnC = document.querySelector('.btn-c');
+
+const btnNext = document.querySelector(".btn-next");
+
+const buttonBox = document.querySelector(".practice-step-button");
+
+const box = document.querySelector(".box");
+
+const dropDown = document.querySelector('.shapeDrop');
+
+
+const radioButtons = document.querySelectorAll('input[name="navigation"]');
+
+const taskTitle = document.querySelector(".task-title");
+
+// radioButtons.style.cursor= "pointer";
+
+radioButtons.forEach(function(radio) {
+ 
+  radio.addEventListener('change', function() {
+    btnNext.disabled = false;
+    btnReset.disabled = false;
+    // console.log(radio.value);
+    if (radio.value === 'third') {
+      // console.log("radio visible")
+      dropDown.classList.remove('hide');
+  } else {
+    // console.log("radio non visible")
+
+    dropDown.classList.add('hide');
+  }
+  }); 
+
+});
+
+const btnReset = document.querySelector(".btn-reset");
+// btnReset.addEventListener("click", clearcanvas);
+const btnTop = document.querySelector(".btn-top");
+// btnTop.addEventListener("click", movetoTop);
+const validateAnswer = document.createElement("span");
+validateAnswer.classList.add("validate");
+
+
+function displayDiv(ele) {
+  const taskScreen = document.querySelectorAll(".task-screen");
+  taskScreen.forEach((task) => {
+    task.classList.add("hide");
+    
+
+  });
+  if (ele.classList.contains("tool-objective")) {
+    document.querySelector(".objective").classList.remove("hide");
+    taskTitle.textContent = "Objective";
+    document.getElementById("Results").style.display = "none";
+    document.getElementById("variables").style.display = "none";
+    document.getElementById('instructions').style.display = 'none';
+    
+  
+  }
+  if (ele.classList.contains("tool-apparatus")) {
+    document.querySelector(".apparatus").classList.remove("hide");
+    taskTitle.textContent = "Apparatus";
+    document.getElementById("Results").style.display = "none";
+    document.getElementById("variables").style.display = "none";
+    document.getElementById('instructions').style.display = 'none';
+  }
+  if (ele.classList.contains("tool-help")) {
+    // document.querySelector(".help").classList.remove("hide");
+    taskTitle.textContent = "Help";
+    document.getElementById("Results").style.display = "none";
+    document.getElementById("variables").style.display = "none";
+    
+  }
+  if (ele.classList.contains("tool-practice")) {
+    document.querySelector(".practice").classList.remove("hide");
+    taskTitle.textContent = "Experiment";
+    document.getElementById("Results").style.display = "block";
+    document.getElementById("variables").style.display = "block";
+    document.getElementById('instructions').style.display = 'none';
+    $(stepTitle).css("margin-left","5rem");
+    // stepNumber.classList.add('hide');
+btnTop.classList.add("hide");
+
+    // console.log("reched here")
+    // quizDiv.classList.remove('hide');
+    // btnNext.addEventListener('click', nextButtonEventListener);
+  
+    radioButtons.forEach(radio => {
+      radio.checked = false;
+    
+  })
+
+  circle1 = new Path2D();
+  // ctx.clearRect(0, 0, canvas.width, canvas.height);
+$(".canvas").css("display","none");
+// stepTitle.textContent = "Select the Experiment:";
+// btnA.classList.add('hide');
+// btnBB.classList.add('hide');
+// btnC.classList.add('hide');
+// btnB1.classList.add('hide');
+$(buttonBox).css("display","none");
+// btnNext.disabled = true;
+//  canvasfun1();
+// console.log(i);
+// stepNumber.textContent = "1";
+// document.getElementById("image").style.display = "none";
+// document.getElementById("image1").style.display = "none";
+// document.getElementById("image3").style.display = "none";
+
+// btnNext.removeEventListener('click',handleDropdownChange);
+// btnNext.addEventListener('click', nextButtonEventListener);
+//  clearcanvas();
+  }
+}
+
+let fun3Executed = false; // Flag to check if fun3 has been executed
+
+let canExecute = false;
+
+
+
+
+
+
+function animate(x1, y1, x2, y2, ratio) {
+  ratio = ratio || 0;
+  drawLine(x1, y1, x2, y2, ratio);
+  if (ratio < 1) {
+    animationFrameID = requestAnimationFrame(function () {
+      animate(x1, y1, x2, y2, ratio + 0.02);
+    });
+  }
+}
+
+
+
+
+
+
+let circle1 = new Path2D(),
+  currentFunction;
+let cirX = 0,
+  cirY = 0,
+  cirText = "";
+
+
+
+
+ var j=0;
+
+
 let hvoltage = 0;
 let blurr;
 let ibtable;
@@ -19,21 +200,21 @@ let Empty;
 
 function blurring() {
     if (blurr == true) {
-        document.getElementById("simoptions").style.filter = 'blur(2px)';
+        document.getElementById("simoptions").style.filter = 'blur(0px)';
         document.getElementById("mainsimulation").style.filter = 'blur(2px)';
-        document.getElementById("buttondown").style.filter = 'blur(2px)';
+        // document.getElementById("buttondown").style.filter = 'blur(2px)';
     } else if (blurr == false) {
         document.getElementById("simoptions").style.filter = 'blur(0px)';
         document.getElementById("mainsimulation").style.filter = 'blur(0px)';
-        document.getElementById("buttondown").style.filter = 'blur(0px)';
+        // document.getElementById("buttondown").style.filter = 'blur(0px)';
     }
 }
 function selection() {
     if (option == 'bjt') {
 
-        console.log('virtual')
+        // console.log('virtual')
     } else if (option == 'opamp') {
-        console.log('virtual lab')
+        // console.log('virtual lab')
     }
 }
 
@@ -74,86 +255,143 @@ function next() {
 
 
 function update() {
-    let select = document.getElementById('exp');
-    let option = select.options[select.selectedIndex].value;
-    document.getElementById("exp").disabled = true;
+  let select = document.getElementById('exp');
+  let option = select.options[select.selectedIndex].value;
+  document.getElementById("exp").disabled = true;
 
-    if (option == 'bjt') {
-        document.getElementById("insert").innerHTML = 'Trigger Button On';
-        document.getElementById("remove").innerHTML = 'Trigger Button off';
+  if (option == 'bjt') {
+      $(document).ready(function () {
+          // Get the window width
+          var windowWidth = $(window).width();
 
-        document.getElementById("ibjt").style.display = 'block';
-        document.getElementById("ibjt1").style.display = 'none';
-        document.getElementById("iopamp").style.display = 'none';
-        document.getElementById("iopamp1").style.display = 'none';
-        document.getElementById("exp").disabled = false;
-        
-        document.getElementById("exp1").disabled = false;
-        document.getElementById('exp1').style.visibility="visible";
-        document.getElementById("exp2").disabled = false;
-        document.getElementById('mono').style.visibility="visible";
-        document.getElementById('mono1').style.visibility="visible";
-        document.getElementById('mono2').style.visibility="visible";
-       document.getElementById("insert").disabled = true;
-       
-        document.getElementById("resistance").style.visibility="visible"
-        document.getElementById("Capacitance").style.visibility="visible"
-         document.getElementById("exp2").style.visibility="visible"
-        document.getElementById("exp").disabled = false;
+          if (windowWidth <= 768) {
+              // For mobile view (width 768px or less)
+              $("#variables").css("display", "inline-block");
+              $("#variables").css("width", "100%"); // Mobile view width 200%
+          } else {
+              // For tablet or desktop view (width more than 768px)
+              $("#variables").css("display", "inline-block");
+              $("#variables").css("width", "100%"); // Set to 100% for larger screens
+          }
 
-        document.getElementById("exp1").style.visibility="visible";
-        document.getElementById('addbutton').style.visibility = "visible"
-        document.getElementById('observationbutton').style.visibility = "visible";
-        document.getElementById('finalresult').style.visibility = "visible"
-        document.getElementById('tfreq').style.visibility = "visible";
-        document.getElementById('pfreq').style.visibility = "visible"
-        document.getElementsByClassName('result')[0].style.visibility="visible";
+          // Re-apply on window resize to keep responsiveness
+          $(window).resize(function () {
+              windowWidth = $(window).width();
 
-        document.getElementById('RB1').style.visibility="hidden";
-        document.getElementById('RB2').style.visibility="hidden";
-        document.getElementById('RB3').style.visibility="hidden";
-       res = 15;
+              if (windowWidth <= 945) {
+                  // For mobile view
+                  $("#variables").css("display", "inline-block");
+                  $("#variables").css("width", "100%");
+              } else {
+                  // For tablet or desktop view
+                  $("#variables").css("display", "inline-block");
+                  $("#variables").css("width", "100%"); // Set 100% for larger screens
+              }
+          });
+      });
 
-        pcheck= true;
-        clearing();
-        remove();
+      // Rest of the code remains the same
+      document.getElementById('grid1').style.display = 'grid';
+      document.getElementById("Results").style.display = "block";
+      document.getElementById("insert").innerHTML = 'Trigger Button On';
+      document.getElementById("remove").innerHTML = 'Trigger Button off';
 
-    } else if (option == 'opamp') {
-       // document.getElementById("Rfvalue").style.display="none";
-        document.getElementById("insert").innerHTML = 'Trigger Button On';
-        document.getElementById("remove").innerHTML = 'Trigger Button off';
-        document.getElementById("observationbutton").disabled = true;
+      document.getElementById("ibjt").style.display = 'block';
+      document.getElementById("ibjt1").style.display = 'none';
+      document.getElementById("iopamp").style.display = 'none';
+      document.getElementById("iopamp1").style.display = 'none';
+      document.getElementById("exp").disabled = false;
 
-        document.getElementById("iopamp").style.display = 'block';
-        document.getElementById("ibjt").style.display = 'none';
-        document.getElementById("ibjt1").style.display = 'none';
-        document.getElementById("iopamp1").style.display = 'none';
+      document.getElementById("exp1").disabled = false;
+      document.getElementById('exp1').style.display = "block";
+      document.getElementById("exp2").disabled = false;
+      document.getElementById('mono').style.visibility = "visible";
+      document.getElementById('mono1').style.visibility = "visible";
+      document.getElementById('mono2').style.visibility = "visible";
+      document.getElementById("insert").disabled = true;
 
-        document.getElementById("resistance").style.visibility="hidden"
-        document.getElementById("Capacitance").style.visibility="hidden"
-        document.getElementById("exp2").style.visibility="hidden"
-        document.getElementById("exp").disabled = false;
+      document.getElementById("resistance").style.display = "block";
+      document.getElementById("Capacitance").style.display = "block";
+      document.getElementById("exp2").style.display = "block";
+      document.getElementById("exp").disabled = false;
 
-        document.getElementById("exp1").style.visibility="hidden";
-        document.getElementById('addbutton').style.visibility = "hidden"
-        document.getElementById('observationbutton').style.visibility = "hidden";
-        document.getElementById('finalresult').style.visibility = "hidden"
-        document.getElementById('tfreq').style.visibility = "hidden";
-        document.getElementById('pfreq').style.visibility = "hidden"
-        document.getElementsByClassName('result')[0].style.visibility="hidden";
-        // document.getElementById("exp").disabled = false;
-        document.getElementById("insert").disabled = false;
-       
-        // document.getElementById('RB4').style.visibility="visible";
-        // document.getElementById('view').style.visibility = "hidden";
-        // document.getElementById('view1').style.visibility = "hidden";
-        // document.getElementById('view2').style.visibility = "hidden";
-        res = 1;
-        pcheck=false;
-        clearing();
-        remove()
-    }
+      document.getElementById("exp1").style.display = "block";
+      document.getElementById('addbutton').style.display = "block";
+      document.getElementById('observationbutton').style.display = "block";
+      document.getElementById('finalresult').style.display = "block";
+      document.getElementById('tfreq').style.visibility = "visible";
+      document.getElementById('pfreq').style.visibility = "visible"
+      document.getElementsByClassName('result')[0].style.visibility = "visible";
+
+      $("#variables").css("display", "inline-block");
+      $("#Results").css("display", "block");
+
+      res = 15;
+      pcheck = true;
+      clearing();
+      remove();
+
+  } else if (option == 'opamp') {
+      document.getElementById('reset').style.display = 'inline-block';
+      document.getElementById('insert').style.display = 'inline-block';
+      document.getElementById("variables").style.width = "100%";
+      document.getElementById('grid1').style.display = 'inline';
+
+      $(document).ready(function () {
+          var windowWidth = $(window).width();
+
+          if (windowWidth <= 768) {
+              $("#variables").css("display", "inline-block");
+              $("#variables").css("width", "100%");
+          } else {
+              $("#variables").css("display", "inline-block");
+              $("#variables").css("width", "200%");
+          }
+
+          $(window).resize(function () {
+              windowWidth = $(window).width();
+
+              if (windowWidth <= 945) {
+                  $("#variables").css("display", "inline-block");
+                  $("#variables").css("width", "100%");
+              } else {
+                  $("#variables").css("display", "inline-block");
+                  $("#variables").css("width", "200%");
+              }
+          });
+      });
+
+      document.getElementById("Results").style.display = "none";
+      document.getElementById("insert").innerHTML = 'Trigger Button On';
+      document.getElementById("remove").innerHTML = 'Trigger Button off';
+      document.getElementById("observationbutton").disabled = true;
+
+      document.getElementById("iopamp").style.display = 'block';
+      document.getElementById("ibjt").style.display = 'none';
+      document.getElementById("ibjt1").style.display = 'none';
+      document.getElementById("iopamp1").style.display = 'none';
+
+      document.getElementById("resistance").style.display = "none";
+      document.getElementById("Capacitance").style.display = "none";
+      document.getElementById("exp2").style.display = "none";
+      document.getElementById("exp").disabled = false;
+
+      document.getElementById("exp1").style.display = "none";
+      document.getElementById('addbutton').style.display = "none";
+      document.getElementById('observationbutton').style.display = "none";
+      document.getElementById('finalresult').style.display = "none";
+      document.getElementById('tfreq').style.visibility = "hidden";
+      document.getElementById('pfreq').style.visibility = "hidden"
+      document.getElementsByClassName('result')[0].style.visibility = "hidden";
+      document.getElementById("insert").disabled = false;
+
+      res = 1;
+      pcheck = false;
+      clearing();
+      remove();
+  }
 }
+
 
 
 function resist() {
@@ -171,12 +409,12 @@ function resist() {
         tfreq = 10.395;
         pfreq = 10.200;
         err = 1.87;
-console.log('hi')
+// console.log('hi')
 // closeobservation()
         
 } 
     else if (option == '18') {
-        console.log('bi')
+        // console.log('bi')
         document.getElementById("insert").disabled = false;
         // document.getElementById("addbutton").disabled = false;
         // document.getElementById("observationbutton").disabled = false;
@@ -193,7 +431,7 @@ console.log('hi')
         // closeobservation()
     }
     else if (option == '20') {
-        console.log('hlo')
+        // console.log('hlo')
      document.getElementById("insert").disabled = false;
     //   document.getElementById("addbutton").disabled = false;
     // document.getElementById("observationbutton").disabled = false;
@@ -237,50 +475,54 @@ function insert() {
         document.getElementById("ibjt1").style.display = 'block';  
         document.getElementById("ibjt").style.display = 'none';
         document.getElementById("view").style.display='block';
-        document.getElementById('R1').style.visibility="visible";
-        document.getElementById('R2').style.visibility="visible";
+        // document.getElementById("close1").style.display='block';
+        // document.getElementById('R1').style.display="block";
+        // document.getElementById('R2').style.display="block";
         document.getElementById('arrow15').style.visibility="visible";
         document.getElementById('arrow18').style.visibility="hidden";
         document.getElementById('arrow20').style.visibility="hidden";
         document.getElementById("iopamp").style.display = 'none';
         document.getElementById("iopamp1").style.display = 'none';
-console.log('hi chethu')
+
     } 
     else if (option == '18') {
         document.getElementById("view1").style.display='block';
+        // document.getElementById("close1").style.display='block';
         document.getElementById('arrow18').style.visibility="visible";
         document.getElementById('arrow15').style.visibility="hidden";
         document.getElementById('arrow20').style.visibility="hidden";
         document.getElementById("ibjt1").style.display = 'block';  
         document.getElementById("ibjt").style.display = 'none';
-        document.getElementById('R1').style.visibility="visible";
-        document.getElementById('R2').style.visibility="visible";
+        // document.getElementById('R1').style.display="block";
+        // document.getElementById('R2').style.display="block";
         document.getElementById("iopamp").style.display = 'none';
         document.getElementById("iopamp1").style.display = 'none';
-        console.log('hi chethudevadiga')
+      
     }
     else if (option == '20') {
         document.getElementById("ibjt1").style.display = 'block';  
         document.getElementById("ibjt").style.display = 'none';
         document.getElementById("view2").style.display='block';
+        // document.getElementById("close1").style.display='block';
         document.getElementById('arrow20').style.visibility="visible";
         document.getElementById('arrow18').style.visibility="hidden";
         document.getElementById('arrow15').style.visibility="hidden";
         document.getElementById("iopamp").style.display = 'none';
         document.getElementById("iopamp1").style.display = 'none';
-        document.getElementById('R1').style.visibility="visible";
-        document.getElementById('R2').style.visibility="visible";
+        // document.getElementById('R1').style.display="block";
+        // document.getElementById('R2').style.display="block";
  }
     else if (pcheck==false) {
         document.getElementById("ibjt").style.display = 'none';
         document.getElementById("ibjt1").style.display = 'none';
         document.getElementById("iopamp").style.display = 'none';
         document.getElementById("iopamp1").style.display = 'block';
-        console.log('vlab')
-        document.getElementById('RB1').style.visibility="visible";
-        document.getElementById('RB2').style.visibility="visible";
-        document.getElementById('RB3').style.visibility="visible";
+      
+        // document.getElementById('RB1').style.display="block";
+        // document.getElementById('RB2').style.display="block";
+        // document.getElementById('RB3').style.display="block";
         document.getElementById("view3").style.display='block';
+        // document.getElementById("close1").style.display='block';
         document.getElementById('arrowB').style.visibility="visible";
         document.getElementById('arrowB1').style.visibility="visible";
     }
@@ -292,10 +534,11 @@ function remove() {
     document.getElementById("insert").style.display = 'block';
 
     document.getElementById("view").style.display='none';
+    // document.getElementById("close1").style.display='none';
     document.getElementById("view1").style.display='none';
     document.getElementById("view2").style.display='none';
-    document.getElementById('R1').style.visibility="hidden";
-    document.getElementById('R2').style.visibility="hidden";
+    // document.getElementById('R1').style.display="none";
+    // document.getElementById('R2').style.display="none";
 
    // document.getElementById("observationbutton").disabled = true;
     document.getElementById("addbutton").disabled = true;
@@ -320,7 +563,7 @@ function remove() {
         document.getElementById("ibjt1").style.display = 'none';
         document.getElementById("iopamp").style.display = 'none';
         document.getElementById("iopamp1").style.display = 'none';
-console.log('hi c15')
+
     } 
     else if (option == '18') {
         document.getElementById("ibjt").style.display = 'block';
@@ -333,7 +576,7 @@ console.log('hi c15')
         document.getElementById("ibjt1").style.display = 'none';
         document.getElementById("iopamp").style.display = 'none';
         document.getElementById("iopamp1").style.display = 'none';
-        console.log('20')
+       
  }
     else if (pcheck==false) {
         document.getElementById("ibjt").style.display = 'none';
@@ -341,9 +584,10 @@ console.log('hi c15')
         document.getElementById("iopamp").style.display = 'block';
         document.getElementById("iopamp1").style.display = 'none';
         document.getElementById("view3").style.display='none';
-        document.getElementById('RB1').style.visibility="hidden";
-        document.getElementById('RB2').style.visibility="hidden";
-        document.getElementById('RB3').style.visibility="hidden";
+        // document.getElementById("close1").style.display='none';
+        document.getElementById('RB1').style.display="none";
+        document.getElementById('RB2').style.display="none";
+        document.getElementById('RB3').style.display="none";
     }
 
     //document.getElementById("Rfvalue").style.display="block";
@@ -400,7 +644,7 @@ function Refresh() {
 function openobservation() {
     document.getElementById("IBobservation").style.display = 'block';
     document.getElementById("finalresult").disabled = false;
-    document.getElementById('blocker').style.display = 'block';
+    // document.getElementById('blocker').style.display = 'block';
     blurr = true;
     blurring();
 }
@@ -409,9 +653,23 @@ function closeobservation() {
     document.getElementById("IBobservation").style.display = 'none';
     blurr = false;
     blurring();
-    document.getElementById('IBgraph').style.display = 'none';
-    document.getElementById('blocker').style.display = 'none';
-    document.getElementById('myChart').style.display = 'none';
+    document.getElementById('IBgraph').style.visibility="hidden";
+    document.getElementById('close1').style.display = 'none';
+    document.getElementById('myChart').style.visibility="hidden";
+    document.getElementById('x1').style.visibility="hidden";
+    document.getElementById('x2').style.visibility="hidden"
+    document.getElementById('x3').style.visibility="hidden"
+    document.getElementById('y1').style.visibility="hidden";
+    document.getElementById('y2').style.visibility="hidden"
+    document.getElementById('y3').style.visibility="hidden"
+  
+    document.getElementById('z1').style.visibility="hidden";
+    document.getElementById('z2').style.visibility="hidden"
+    document.getElementById('z3').style.visibility="hidden"
+    document.getElementById('arrow15').style.visibility="hidden";
+    document.getElementById('arrow18').style.visibility="hidden"
+    document.getElementById('arrow20').style.visibility="hidden"
+    
     document.getElementById('instructions').style.display = 'none';
 }
 
@@ -433,7 +691,7 @@ function addobservation() {
         magcount += 1;
         ibtable = document.getElementById("IBobservationTable");
         ibrow = ibtable.insertRow(magcount + 1);
-        console.log("Hi shwetha");
+     
         let cell1 = ibrow.insertCell(0);
         let cell2 = ibrow.insertCell(1);
         let cell3 = ibrow.insertCell(2);
@@ -448,15 +706,19 @@ function addobservation() {
 
 
 function clearing() {
-    for (var i = 1; i < ibtable.rows.length;) {
-        ibtable.deleteRow(i);
-    }
-    magcount = -1;
-    ibXarray.length = 0;
-    document.getElementById("finalresult").disabled = false;
-    document.getElementById('tfreq').innerHTML = null;
-    document.getElementById('pfreq').innerHTML = null;
-
+  let ibtable = document.getElementById("IBobservationTable"); // Ensure ibtable is defined
+  if (ibtable) {  // Check if the table exists
+      for (var i = 1; i < ibtable.rows.length;) {
+          ibtable.deleteRow(i);
+      }
+      magcount = -1;
+      ibXarray.length = 0;
+      document.getElementById("finalresult").disabled = false;
+      document.getElementById('tfreq').innerHTML = null;
+      document.getElementById('pfreq').innerHTML = null;
+  } else {
+      console.error("Table element not found!");
+  }
 }
 
 
@@ -597,237 +859,247 @@ function practfreq(min, max) {
 
 //Graph
 function IBgraph() {
-    document.getElementById('IBobservation').style.display = 'none'
-    document.getElementById('IBgraph').style.display = 'block'
-    document.getElementById('myChart').style.display = 'block'
-    document.getElementById('blocker').style.display = 'block';
-    document.getElementById('x1').style.visibility="visible";
-    document.getElementById('x2').style.visibility="visible"
-    document.getElementById('x3').style.visibility="visible"
+  blurr = true;
+    blurring();
+  document.getElementById('IBobservation').style.display = 'none'
+  document.getElementById('IBgraph').style.visibility="visible";
+  document.getElementById('myChart').style.visibility="visible";
+  document.getElementById('arrow15').style.visibility="visible";
+  document.getElementById('close1').style.display = 'block';
+  document.getElementById('x1').style.visibility="visible";
+  document.getElementById('x2').style.visibility="visible"
+  document.getElementById('x3').style.visibility="visible"
 
-    document.getElementById('y1').style.visibility="hidden";
-    document.getElementById('y2').style.visibility="hidden"
-    document.getElementById('y3').style.visibility="hidden"
+  document.getElementById('y1').style.visibility="hidden";
+  document.getElementById('y2').style.visibility="hidden"
+  document.getElementById('y3').style.visibility="hidden"
 
-    document.getElementById('z1').style.visibility="hidden";
-    document.getElementById('z2').style.visibility="hidden"
-    document.getElementById('z3').style.visibility="hidden"
-   
-    var trace1 = {
-            x: [0,1,1,1.5,1.5,5,],
-            y: [15,15,-15,-15,15,15,],
-            type: 'line+marker',
-          };
-          
-          var trace2 = {
-            x: [0, 1, 1, 1.2, 5],
-            y: [-25, -25, -40, -25, -25],
-            type: 'scatter',
-            // title: "Time period(in ms)",
-            
-          };
-          
-          var data = [trace1, trace2, ];
-
-          var layout = {
-            xaxis: {
-              title: '"Time (in ms)"'
-            },
-            yaxis: {
-              title: "Voltage(V)"
-              
-            }
-          };
-          var options = {
-            scrollZoom: false, // lets us scroll to zoom in and out - works
-            showLink: false, // removes the link to edit on plotly - works
-            modeBarButtonsToRemove: ['toImage', 'zoom2d', 'pan', 'pan2d', 'autoScale2d'],
-            //modeBarButtonsToAdd: ['lasso2d'],
-            displayLogo: false, // this one also seems to not work
-            displayModeBar: false, //this one does work
-            isResponsive:true,
-            animationEnabled:true,
+  document.getElementById('z1').style.visibility="hidden";
+  document.getElementById('z2').style.visibility="hidden"
+  document.getElementById('z3').style.visibility="hidden"
+ 
+  var trace1 = {
+          x: [0,1,1,1.5,1.5,5,],
+          y: [15,15,-15,-15,15,15,],
+          type: 'line+marker',
         };
-          
-          
-          Plotly.newPlot('myChart', data,layout,options,);
         
-   
-    }   
-    function IBgraph1() {
-        document.getElementById('IBobservation').style.display = 'none'
-        document.getElementById('IBgraph').style.display = 'block'
-        document.getElementById('myChart').style.display = 'block'
-        document.getElementById('blocker').style.display = 'block';
-
-        document.getElementById('y1').style.visibility="visible";
-    document.getElementById('y2').style.visibility="visible"
-    document.getElementById('y3').style.visibility="visible";
-
-    document.getElementById('x1').style.visibility="hidden";
-    document.getElementById('x2').style.visibility="hidden"
-    document.getElementById('x3').style.visibility="hidden"
-
-    document.getElementById('z1').style.visibility="hidden";
-    document.getElementById('z2').style.visibility="hidden"
-    document.getElementById('z3').style.visibility="hidden"
-
-        var trace1 = {
-            x: [0,1.5,1.5,2.5,2.5,5,],
-            y: [15,15,-15,-15,15,15,,],
-            type: 'line+marker'
-          };
+        var trace2 = {
+          x: [0, 1, 1, 1.2, 5],
+          y: [-25, -25, -40, -25, -25],
+          type: 'scatter',
+          // title: "Time period(in ms)",
           
-          var trace2 = {
-            x: [0, 1.5, 1.5, 1.7, 5],
-            y: [-25, -25, -40, -25, -25],
-            type: 'scatter'
-            
-          };
-          
-          var data = [trace1, trace2, ];
-
-          var layout = {
-            xaxis: {
-              title: '"Time(in ms)"'
-            },
-            yaxis: {
-              title: "Voltage(V)"
-              
-            }
-          };
-          var options = {
-            scrollZoom: false, // lets us scroll to zoom in and out - works
-            showLink: false, // removes the link to edit on plotly - works
-            modeBarButtonsToRemove: ['toImage', 'zoom2d', 'pan', 'pan2d', 'autoScale2d'],
-            //modeBarButtonsToAdd: ['lasso2d'],
-            displayLogo: false, // this one also seems to not work
-            displayModeBar: false, //this one does work
-            isResponsive:true,
-            animationEnabled:true,
         };
+        
+        var data = [trace1, trace2, ];
+
+        var layout = {
+          xaxis: {
+            title: '"Time (in ms)"'
+          },
+          yaxis: {
+            title: "Voltage(V)"
+            
+          }
+        };
+        var options = {
+          scrollZoom: false, // lets us scroll to zoom in and out - works
+          showLink: false, // removes the link to edit on plotly - works
+          modeBarButtonsToRemove: ['toImage', 'zoom2d', 'pan', 'pan2d', 'autoScale2d'],
+          //modeBarButtonsToAdd: ['lasso2d'],
+          displayLogo: false, // this one also seems to not work
+          displayModeBar: false, //this one does work
+          isResponsive:true,
+          animationEnabled:true,
+      };
+        
+        
+        Plotly.newPlot('myChart', data,layout,options,);
+      
+ 
+  }   
+  function IBgraph1() {
+    blurr = true;
+    blurring();
+      document.getElementById('IBobservation').style.display = 'none'
+      document.getElementById('IBgraph').style.visibility="visible";
+      document.getElementById('myChart').style.visibility="visible";
+      document.getElementById('close1').style.display = 'block';
+
+      document.getElementById('y1').style.visibility="visible";
+  document.getElementById('y2').style.visibility="visible"
+  document.getElementById('y3').style.visibility="visible";
+
+  document.getElementById('x1').style.visibility="hidden";
+  document.getElementById('x2').style.visibility="hidden"
+  document.getElementById('x3').style.visibility="hidden"
+
+  document.getElementById('z1').style.visibility="hidden";
+  document.getElementById('z2').style.visibility="hidden"
+  document.getElementById('z3').style.visibility="hidden"
+
+      var trace1 = {
+          x: [0,1.5,1.5,2.5,2.5,5,],
+          y: [15,15,-15,-15,15,15,,],
+          type: 'line+marker'
+        };
+        
+        var trace2 = {
+          x: [0, 1.5, 1.5, 1.7, 5],
+          y: [-25, -25, -40, -25, -25],
+          type: 'scatter'
           
-          Plotly.newPlot('myChart', data,layout,options,);
-    }   
+        };
+        
+        var data = [trace1, trace2, ];
 
-    function IBgraph2() {
-        document.getElementById('IBobservation').style.display = 'none'
-        document.getElementById('IBgraph').style.display = 'block'
-        document.getElementById('myChart').style.display = 'block'
-        document.getElementById('blocker').style.display = 'block';
+        var layout = {
+          xaxis: {
+            title: '"Time(in ms)"'
+          },
+          yaxis: {
+            title: "Voltage(V)"
+            
+          }
+        };
+        var options = {
+          scrollZoom: false, // lets us scroll to zoom in and out - works
+          showLink: false, // removes the link to edit on plotly - works
+          modeBarButtonsToRemove: ['toImage', 'zoom2d', 'pan', 'pan2d', 'autoScale2d'],
+          //modeBarButtonsToAdd: ['lasso2d'],
+          displayLogo: false, // this one also seems to not work
+          displayModeBar: false, //this one does work
+          isResponsive:true,
+          animationEnabled:true,
+      };
+        
+        Plotly.newPlot('myChart', data,layout,options,);
+  }   
 
-        document.getElementById('z1').style.visibility="visible";
-    document.getElementById('z2').style.visibility="visible"
-    document.getElementById('z3').style.visibility="visible";
+  function IBgraph2() {
+    blurr = true;
+    blurring();
+      document.getElementById('IBobservation').style.display = 'none'
+      document.getElementById('IBgraph').style.visibility="visible";
+      document.getElementById('myChart').style.visibility="visible";
+      document.getElementById('close1').style.display = 'block';
 
-    document.getElementById('x1').style.visibility="hidden";
-    document.getElementById('x2').style.visibility="hidden"
-    document.getElementById('x3').style.visibility="hidden"
+      document.getElementById('z1').style.visibility="visible";
+  document.getElementById('z2').style.visibility="visible"
+  document.getElementById('z3').style.visibility="visible";
 
-    document.getElementById('y1').style.visibility="hidden";
-    document.getElementById('y2').style.visibility="hidden"
-    document.getElementById('y3').style.visibility="hidden"
-        var trace1 = {
-                x: [0,1.5,1.5,3,3,5,],
-                y: [15,15,-15,-15,15,15,],
-                type: 'line+marker'
-              };
-              
-              var trace2 = {
-                x: [0, 1.5, 1.5, 1.7, 5],
-                y: [-25, -25, -40, -25, -25],
-                type: 'scatter'
-                
-              };
-              
-              var data = [trace1, trace2, ];
+  document.getElementById('x1').style.visibility="hidden";
+  document.getElementById('x2').style.visibility="hidden"
+  document.getElementById('x3').style.visibility="hidden"
 
-              var layout = {
-                xaxis: {
-                  title: '"Time(in ms)"'
-                },
-                yaxis: {
-                  title: "Voltage(V)"
-                  
-                }
-              };
-              var options = {
-                scrollZoom: false, // lets us scroll to zoom in and out - works
-                showLink: false, // removes the link to edit on plotly - works
-                modeBarButtonsToRemove: ['toImage', 'zoom2d', 'pan', 'pan2d', 'autoScale2d'],
-                //modeBarButtonsToAdd: ['lasso2d'],
-                displayLogo: false, // this one also seems to not work
-                displayModeBar: false, //this one does work
-                isResponsive:true,
-                animationEnabled:true,
+  document.getElementById('y1').style.visibility="hidden";
+  document.getElementById('y2').style.visibility="hidden"
+  document.getElementById('y3').style.visibility="hidden"
+      var trace1 = {
+              x: [0,1.5,1.5,3,3,5,],
+              y: [15,15,-15,-15,15,15,],
+              type: 'line+marker'
             };
+            
+            var trace2 = {
+              x: [0, 1.5, 1.5, 1.7, 5],
+              y: [-25, -25, -40, -25, -25],
+              type: 'scatter'
               
-              Plotly.newPlot('myChart', data,layout,options);
-              
-    }   
-        
-    function IBgraph3() {
-        document.getElementById('IBobservation').style.display = 'none'
-        document.getElementById('IBgraph').style.display = 'block'
-        document.getElementById('myChart').style.display = 'block'
-        document.getElementById('blocker').style.display = 'block';
+            };
+            
+            var data = [trace1, trace2, ];
 
-        // document.getElementById('s1').style.visibility="visible";
-    document.getElementById('s2').style.visibility="visible"
-    document.getElementById('s3').style.visibility="visible";
-
-    document.getElementById('x1').style.visibility="hidden";
-    document.getElementById('x2').style.visibility="hidden"
-    document.getElementById('x3').style.visibility="hidden"
-
-    document.getElementById('z1').style.visibility="hidden";
-    document.getElementById('z2').style.visibility="hidden"
-    document.getElementById('z3').style.visibility="hidden"
-
-    
-    document.getElementById('y1').style.visibility="hidden";
-    document.getElementById('y2').style.visibility="hidden"
-    document.getElementById('y3').style.visibility="hidden"
-    var trace1 = {
-        x: [0,1,1,1.5,1.5,3,3,3.5,3.5,5],
-        y: [15,15,-15,-15,15,15,-15,-15,15,15],
-        type: 'line+marker',
-      };
+            var layout = {
+              xaxis: {
+                title: '"Time(in ms)"'
+              },
+              yaxis: {
+                title: "Voltage(V)"
+                
+              }
+            };
+            var options = {
+              scrollZoom: false, // lets us scroll to zoom in and out - works
+              showLink: false, // removes the link to edit on plotly - works
+              modeBarButtonsToRemove: ['toImage', 'zoom2d', 'pan', 'pan2d', 'autoScale2d'],
+              //modeBarButtonsToAdd: ['lasso2d'],
+              displayLogo: false, // this one also seems to not work
+              displayModeBar: false, //this one does work
+              isResponsive:true,
+              animationEnabled:true,
+          };
+            
+            Plotly.newPlot('myChart', data,layout,options);
+            
+  }   
       
-      var trace2 = {
-        x: [0, 1, 1, 1.2, 3,3,3.2,5],
-        y: [-25, -25, -40, -25, -25,-40,-25,-25],
-        type: 'scatter',
-        title: "time period(in ms)",
-        
-      };
-      
-      var data = [trace1, trace2, ];
+  function IBgraph3() {
+    blurr = true;
+    blurring();
+      document.getElementById('IBobservation').style.display = 'none'
+      document.getElementById('IBgraph').style.visibility="visible";
+      document.getElementById('myChart').style.visibility="visible";
+      document.getElementById('close1').style.display = 'block';
 
-      var layout = {
-        xaxis: {
-          title: '"Time (in ms)"'
-        },
-        yaxis: {
-          title: "Voltage(V)"
-          
-        }
-      };
-      var options = {
-        scrollZoom: false, // lets us scroll to zoom in and out - works
-        showLink: false, // removes the link to edit on plotly - works
-        modeBarButtonsToRemove: ['toImage', 'zoom2d', 'pan', 'pan2d', 'autoScale2d'],
-        //modeBarButtonsToAdd: ['lasso2d'],
-        displayLogo: false, // this one also seems to not work
-        displayModeBar: false, //this one does work
-        isResponsive:true,
-        animationEnabled:true,
+      // document.getElementById('s1').style.visibility="visible";
+  document.getElementById('s2').style.visibility="visible"
+  document.getElementById('s3').style.visibility="visible";
+
+  document.getElementById('x1').style.visibility="hidden";
+  document.getElementById('x2').style.visibility="hidden"
+  document.getElementById('x3').style.visibility="hidden"
+
+  document.getElementById('z1').style.visibility="hidden";
+  document.getElementById('z2').style.visibility="hidden"
+  document.getElementById('z3').style.visibility="hidden"
+
+  
+  document.getElementById('y1').style.visibility="hidden";
+  document.getElementById('y2').style.visibility="hidden"
+  document.getElementById('y3').style.visibility="hidden"
+  var trace1 = {
+      x: [0,1,1,1.5,1.5,3,3,3.5,3.5,5],
+      y: [15,15,-15,-15,15,15,-15,-15,15,15],
+      type: 'line+marker',
     };
-      
-      
-      Plotly.newPlot('myChart', data,layout,options,);
     
-    }   
+    var trace2 = {
+      x: [0, 1, 1, 1.2, 3,3,3.2,5],
+      y: [-25, -25, -40, -25, -25,-40,-25,-25],
+      type: 'scatter',
+      title: "time period(in ms)",
+      
+    };
+    
+    var data = [trace1, trace2, ];
+
+    var layout = {
+      xaxis: {
+        title: '"Time (in ms)"'
+      },
+      yaxis: {
+        title: "Voltage(V)"
+        
+      }
+    };
+    var options = {
+      scrollZoom: false, // lets us scroll to zoom in and out - works
+      showLink: false, // removes the link to edit on plotly - works
+      modeBarButtonsToRemove: ['toImage', 'zoom2d', 'pan', 'pan2d', 'autoScale2d'],
+      //modeBarButtonsToAdd: ['lasso2d'],
+      displayLogo: false, // this one also seems to not work
+      displayModeBar: false, //this one does work
+      isResponsive:true,
+      animationEnabled:true,
+  };
+    
+    
+    Plotly.newPlot('myChart', data,layout,options,);
+  
+  }   
+  
     
 
     // var trace1 = {
@@ -849,7 +1121,7 @@ function IBgraph() {
 //help button      
 function help() {
     document.getElementById('instructions').style.display = 'block';
-    document.getElementById('blocker').style.display = 'block';
+    // document.getElementById('close1').style.display = 'block';
 }
 let result;
 //display result
