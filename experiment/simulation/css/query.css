@@ -10,22 +10,26 @@ em:current font size
 /* **************************** */
 
 @media (min-width: 1200px) {
-  
-.objective {
-  padding: 12rem;
-}
-.canvas__div {
-  padding: 20px;
-}
-/* #variables {
+  body {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  .objective {
+    padding: 12rem;
+  }
+  .canvas__div {
+    padding: 20px;
+  }
+  /* #variables {
   width: 100%;
 } */
-#IBgraph{
-  transform: scale(0.75);
-  margin-top: -19%;
-  margin-left: -19%;
-  width: 133%;
-}
+  #IBgraph {
+    transform: scale(0.75);
+    margin-top: -19%;
+    margin-left: -19%;
+    width: 133%;
+  }
 }
 
 /* **************************** */
@@ -33,10 +37,6 @@ em:current font size
 /* **************************** */
 
 @media (max-width: 75em) {
-  body {
-    width: 100%;
-    margin: unset;
-  }
   .title-div h1 {
     font-size: 2.5rem;
   }
@@ -72,14 +72,14 @@ em:current font size
   /* #variables {
     width: 100%;
   } */
- 
+
   .objective {
     padding: 7rem;
   }
   .canvas__div {
     padding: 30px;
   }
-  #IBgraph{
+  #IBgraph {
     transform: scale(0.9);
     margin-top: -10%;
     margin-left: 3%;
@@ -92,6 +92,10 @@ em:current font size
 /* **************************** */
 
 @media (max-width: 59em) {
+  body {
+    width: 100%;
+    margin: 0;
+  }
   .tool-link:link,
   .tool-link:visited {
     gap: 0.5rem;
@@ -114,6 +118,10 @@ em:current font size
     justify-content: space-evenly;
     border-radius: 0;
     scroll-behavior: auto;
+    margin: 0;
+  }
+  .main {
+    grid-column: 1/-1;
   }
   .tool-menu {
     list-style: none;
@@ -204,12 +212,11 @@ em:current font size
   .objective {
     padding: 10rem;
   }
-  #IBgraph{
+  #IBgraph {
     transform: scale(0.8);
     margin-top: -12%;
     margin-left: -4%;
     width: 104%;
-    
   }
   /* #IBgraph{
     transform: scale(0.48);
@@ -238,14 +245,14 @@ em:current font size
   .tool-list span {
     font-size: 1.6rem;
   }
- 
+
   .footer {
     margin-bottom: 78px;
   }
   .objective {
     padding: 10rem;
   }
-  #IBgraph{
+  #IBgraph {
     transform: scale(0.8);
     margin-top: -19%;
     margin-left: -9%;
@@ -283,7 +290,7 @@ em:current font size
   .main__task-div:nth-child(4) {
     margin-bottom: 6rem;
   }
- 
+
   .cross-img {
     width: 60%;
   }
@@ -296,7 +303,7 @@ em:current font size
   .footer {
     margin-bottom: 78px;
   }
- 
+
   .objective {
     padding: 9rem;
   }
@@ -305,14 +312,13 @@ em:current font size
     transform: scale(0.8);
    
   } */
-  #IBgraph{
+  #IBgraph {
     transform: scale(0.65);
     margin-top: -29%;
     margin-left: -35%;
     width: 163%;
-
   }
-  .observation{
+  .observation {
     transform: scale(0.8);
   }
 }
@@ -388,20 +394,20 @@ em:current font size
   .footer {
     margin-bottom: 78px;
   }
- 
+
   .objective {
     padding: 9rem;
   }
-  #IBgraph{
+  #IBgraph {
     transform: scale(0.5);
     margin-top: -44%;
     margin-left: -63%;
     width: 213%;
   }
-  .observation{
+  .observation {
     transform: scale(0.7);
   }
-  #instruct{
+  #instruct {
     font-size: 2rem;
   }
 }
@@ -463,22 +469,19 @@ em:current font size
   .footer {
     margin-bottom: 78px;
   }
-  
-  #IBgraph{
-  
+
+  #IBgraph {
     transform: scale(0.45);
     margin-top: -51%;
     margin-left: -82%;
     width: 76rem;
-
   }
-  .observation{
+  .observation {
     transform: scale(0.6);
   }
-  .circuit{
+  .circuit {
     width: 100%;
   }
-  
 }
 /* 
 
