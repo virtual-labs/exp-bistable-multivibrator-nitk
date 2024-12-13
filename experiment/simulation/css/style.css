@@ -175,6 +175,9 @@ h1 {
   );
   color: var(--clr-text-clr);
   letter-spacing: 0.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .task-variable {
@@ -1147,4 +1150,20 @@ th {
     var(--clr-side-background3)
   );
   color: var(--clr-text-clr);
+}
+.sim-icons {
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.flex {
+  display: flex;
+}
+
+.sim-icon {
+  position: relative;
+  justify-self: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  cursor: pointer;
 }
