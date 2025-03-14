@@ -463,17 +463,17 @@ function insert() {
     // document.getElementById("close1").style.display='block';
     // document.getElementById('R1').style.display="block";
     // document.getElementById('R2').style.display="block";
-    document.getElementById("arrow15").style.visibility = "visible";
-    document.getElementById("arrow18").style.visibility = "hidden";
-    document.getElementById("arrow20").style.visibility = "hidden";
+    // document.getElementById("arrow15").style.visibility = "visible";
+    // document.getElementById("arrow18").style.visibility = "hidden";
+    // document.getElementById("arrow20").style.visibility = "hidden";
     document.getElementById("iopamp").style.display = "none";
     document.getElementById("iopamp1").style.display = "none";
   } else if (option == "18") {
     document.getElementById("view1").style.display = "block";
     // document.getElementById("close1").style.display='block';
-    document.getElementById("arrow18").style.visibility = "visible";
-    document.getElementById("arrow15").style.visibility = "hidden";
-    document.getElementById("arrow20").style.visibility = "hidden";
+    // document.getElementById("arrow18").style.visibility = "visible";
+    // document.getElementById("arrow15").style.visibility = "hidden";
+    // document.getElementById("arrow20").style.visibility = "hidden";
     document.getElementById("ibjt1").style.display = "block";
     document.getElementById("ibjt").style.display = "none";
     // document.getElementById('R1').style.display="block";
@@ -485,9 +485,9 @@ function insert() {
     document.getElementById("ibjt").style.display = "none";
     document.getElementById("view2").style.display = "block";
     // document.getElementById("close1").style.display='block';
-    document.getElementById("arrow20").style.visibility = "visible";
-    document.getElementById("arrow18").style.visibility = "hidden";
-    document.getElementById("arrow15").style.visibility = "hidden";
+    // document.getElementById("arrow20").style.visibility = "visible";
+    // document.getElementById("arrow18").style.visibility = "hidden";
+    // document.getElementById("arrow15").style.visibility = "hidden";
     document.getElementById("iopamp").style.display = "none";
     document.getElementById("iopamp1").style.display = "none";
     // document.getElementById('R1').style.display="block";
@@ -503,8 +503,8 @@ function insert() {
     // document.getElementById('RB3').style.display="block";
     document.getElementById("view3").style.display = "block";
     // document.getElementById("close1").style.display='block';
-    document.getElementById("arrowB").style.visibility = "visible";
-    document.getElementById("arrowB1").style.visibility = "visible";
+    // document.getElementById("arrowB").style.visibility = "visible";
+    // document.getElementById("arrowB1").style.visibility = "visible";
   }
 }
 
@@ -826,7 +826,7 @@ function IBgraph() {
   document.getElementById("IBobservation").style.display = "none";
   document.getElementById("IBgraph").style.visibility = "visible";
   document.getElementById("myChart").style.visibility = "visible";
-  document.getElementById("arrow15").style.visibility = "visible";
+  // document.getElementById("arrow15").style.visibility = "visible";
   document.getElementById("close1").style.display = "block";
   document.getElementById("x1").style.visibility = "visible";
   document.getElementById("x2").style.visibility = "visible";
@@ -1130,4 +1130,10 @@ function storeNumber() {
 
 function equation(x) {
   return 5 * Math.sin(2 * 10(Math.pow(-6)) * pfreq * x);
+}
+
+//Reset button function
+
+function Refresh() {
+  window.location = window.location.href;
 }
