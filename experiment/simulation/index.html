@@ -80,6 +80,18 @@
               >
               <span>Help</span>
           </li>
+          <li class="tool-list" onclick="Refresh()">
+            <a href="#" class="tool-link" id="refreshLink" title="Refresh">
+              <img
+                type="reset"
+                src="images/bluecwdull.svg"
+                alt="Refresh
+              Button"
+                class="reset"
+              />
+            </a>
+            <span class="refresh">Reset</span>
+          </li>
           
         </ul>
       </div> 
@@ -97,7 +109,7 @@
             <div class="canvas__div">
               <div class="task-screen objective">
                 <!-- <h3 class="objective__title">Objective</h3> -->
-                <p class="objective__main">To understand the working of monostable and bistable multivibrators and to analyze their output.
+                <p class="objective__main">To understand the working of monostable and bistable multivibrators and to analyze their output. 
 
                 </p>
                
@@ -108,15 +120,15 @@
                 <div class="apparatus-screen">
                   <div class="apparatus-tool">
                     <img src="images/diode.png" alt="diode" class="tool-img diode">
-                    <span>Diode</span>
+                    <span>Diodes (D, D<sub>D</sub>),</span>
                   </div>
                   <div class="apparatus-tool">
                     <img src="images/capacitor.png" alt="capacitor"class="tool-img capacitor">
-                    <span>Capacitor</span>
+                    <span>Capacitor(C, C<sub>D</sub>)</span>
                   </div>
                   <div class="apparatus-tool">
                     <img  src="images/resistor.png" alt="resistor"class="tool-img resistor">
-                    <span>Resistor</span>
+                    <span>Resistor(R,R<sub>1</sub>,R<sub>2</sub>,R<sub>D</sub>),</span>
                   </div>
                   <div class="apparatus-tool">
                     <img src="images/opamp.png" alt="opamp" class="tool-img opamp">
@@ -172,9 +184,9 @@
                 <button id="close1" onclick="closeobservation()" style="display: none;
         "> <span>&times;</span></button>
                 <div id="myChart" style="width: 95%;">
-                  <img id="arrow15" style="position: absolute; visibility: hidden;    margin-left: -266px;
+                  <!-- <img id="arrow15" style="position: absolute; visibility: hidden;    margin-left: -266px;
                   margin-top: -174px;
-              " src="images/arrow_15.png"/>
+              " src="images/arrow_15.png"/> -->
                   <p id="x1" style="position:absolute;font-family:Verdana;font-size:14pz;left:285px;top:20px;visibility:hidden;">T = 10.3ms</p>
                   <p id="x2" style="position:absolute;font-family:Verdana;font-size:14pz;left:285px;top:42px;visibility:hidden;">Volt + = +15V</p>
                   <p id="x3" style="position:absolute;font-family:Verdana;font-size:14pz;left:285px;top:65px;visibility:hidden;">Volt - = -15V</p>
@@ -196,7 +208,7 @@
     
     
                 
-               
+<!--                
                 <img id="arrow18" style="position: absolute; visibility: hidden;    margin-left: -77px;
     margin-top: -151px;" src="images/arrow_18.png"/>
                 <img id="arrow20" style="position: absolute; visibility: hidden;    margin-left: -58px;
@@ -204,7 +216,7 @@
                 <img id="arrowB" style="position: absolute; visibility: hidden;    margin-left: 102px;
     margin-top: -149px;" src="images/arrow_15.png"/>
                 <img id="arrowB1" style="position: absolute; visibility: hidden;margin-left: -266px;
-    margin-top: -148px;" src="images/arrow_15.png"/>
+    margin-top: -148px;" src="images/arrow_15.png"/> -->
               
                   </div>
                
@@ -310,9 +322,9 @@
                     <label id="resistance" style="text-align: left;" >Resistance R(kΩ):</label>
                        <select id="exp1" name="exp1" step="any"  onchange="resist()"disabled>
                         <option value="Empty" hidden>Select the Resistance</option>
-                        <option id="mono" style="visibility: hidden;" value="15" >15K</option>
-                        <option id="mono1" style="visibility: hidden;" value="18">18K</option>
-                        <option id="mono2" style="visibility: hidden;" value="20">20K</option>
+                        <option id="mono" style="visibility: hidden;" value="15" >15</option>
+                        <option id="mono1" style="visibility: hidden;" value="18">18</option>
+                        <option id="mono2" style="visibility: hidden;" value="20">20</option>
                     </select>
                    
                    </div>  
@@ -326,7 +338,7 @@
                         </div>   
                         </div> 
                 <div id="grid1">
-                <div class="insert-reset-observation ">
+                <div class="insert-reset-observation">
                     <button id="insert" type="button" onclick="insert()" disabled>Trigger Button On</button>
                     <button id="remove" type="button" onclick="remove()" style="display:none;font-size: 12px;">Trigger Button off</button>
                 </div>
@@ -395,9 +407,10 @@
           </button>
           </div>
           </div>
+         
+          </div>
           <div class="main__task-div footer">
             <p>Copyright © SOLVE The Virtual Lab @ NITK Surathkal</p>
-          </div>
           </div>
         </div>
      
