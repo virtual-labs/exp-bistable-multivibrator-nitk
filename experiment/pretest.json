@@ -2,38 +2,89 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "A monostable multivibrator has which of the following state(s) I.One stable state, II. One quasi-stable state",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Neither I nor II",
+        "b": "Only II",
+        "c": "Both I and II",
+        "d": "Only I"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which among the multivibrators is unstable in any state?",
+      "answers": {
+        "a": "Astable Multivibrator",
+        "b": "Monostable Multivibrator",
+        "c": "Bistable Multivibrator",
+        "d": "Both Astable and Bistable Multivibrator"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "The Bistable multivibrator",
+      "answers": {
+        "a": "has two stable states",
+        "b": "has one stable state",
+        "c": "is free running",
+        "d": "none of the above"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Monostable multivibrator can also be termed as ____________",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Full astable multivibrator",
+        "b": "Half astable multivibrator",
+        "c": "Half bistable multivibrator",
+        "d": "Full bistable multivibrator"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "How many types of multivibrators are?",
+      "answers": {
+        "a": "2",
+        "b": "4",
+        "c": "5",
+        "d": "3"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
     }
   ]
 }
