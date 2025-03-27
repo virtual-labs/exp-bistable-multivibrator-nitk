@@ -1,23 +1,18 @@
 <!-- Remove all lines above this line before making changes to the file -->
 
-### Lab Coordinator:
+### Lab Developer:
 
 | SNo. |      Name       | Institute |                    Department                     |
 | :--: | :-------------: | :-------: | :-----------------------------------------------: |
 |  1   | Dr. Ajith K M       |   NITK  | Department of Physics |
 |  2   | Dr. K V Gangadharan |   NITK  | Department of Mechanical Engineering |
 
-### Lab Developers:
+### Contributors:
 
 | SNo. |  Name   | Institute |
 | :--: | :-----: | :-------: |
 |  1   | Shwetha |   NITK    |
-
-### Content Developers:
-
-| SNo. |      Name       | Institute |
-| :--: | :-------------: | :-------: |
-|  1   | Sibeesh Padiyoor      |   NITK    |
-|  2   | Muhammed Mansoor CB   |   NITK    |
-|  3   | Akshaya               |   NITK    |
-|  4   | Anusha B Salian       |   NITK    |
+|  2   | Sibeesh Padiyoor      |   NITK    |
+|  3   | Muhammed Mansoor CB   |   NITK    |
+|  4   | Akshaya               |   NITK    |
+|  5   | Anusha B Salian       |   NITK    |
