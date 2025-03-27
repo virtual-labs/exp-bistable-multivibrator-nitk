@@ -1,6 +1,6 @@
 <!-- Remove all lines above this line before making changes to the file -->
 
-### Lab Developer:
+### Lab Developers:
 
 | SNo. |      Name       | Institute |                    Department                     |
 | :--: | :-------------: | :-------: | :-----------------------------------------------: |
