@@ -13,6 +13,7 @@
 | :--: | :-----: | :-------: |
 |  1   | Shwetha |   NITK    |
 |  2   | Sibeesh Padiyoor      |   NITK    |
-|  3   | Muhammed Mansoor CB   |   NITK    |
-|  4   | Akshaya               |   NITK    |
-|  5   | Anusha B Salian       |   NITK    |
+|  3   | Vismaya M Kumar     |   NITK    |
+|  4   | Muhammed Mansoor CB   |   NITK    |
+|  5   | Akshaya               |   NITK    |
+|  6   | Anusha B Salian       |   NITK    |
