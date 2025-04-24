@@ -12,9 +12,9 @@
 </ol>
 </td>
 <td>
-Developers :
-  Dr. Ajith K M | NITK</br> 
-  Dr. K V Gangadharan | NITK</br></br>
+Developers :</br>
+  <li> Dr. Ajith K M | NITK</li> 
+ </li> Dr. K V Gangadharan | NITK</li></br>
   
 Contributors :
 <ul style="list-style-type: none;">
