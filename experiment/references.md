@@ -17,14 +17,13 @@ Developers :</br>
  <li> Dr. K V Gangadharan | NITK</li></br>
   
 Contributors :
-<ul style="list-style-type: none;">
 <li> Shwetha              | NITK</li>
 <li> Sibeesh Padiyoor     | NITK</li>
 <li> Vismaya M Kumar     | NITK</li>
 <li> Muhammed Mansoor CB  | NITK</li>
 <li> Akshaya              | NITK</li>
 <li> Anusha B Salian      | NITK</li>
-</ul>
+
 </td>
 </tr>
 </table>
