@@ -14,7 +14,7 @@
 <td>
 Developers :</br>
   <li> Dr. Ajith K M | NITK</li> 
- </li> Dr. K V Gangadharan | NITK</li></br>
+ <li> Dr. K V Gangadharan | NITK</li></br>
   
 Contributors :
 <ul style="list-style-type: none;">
