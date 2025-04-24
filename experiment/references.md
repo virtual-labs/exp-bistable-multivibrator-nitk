@@ -12,7 +12,7 @@
 </ol>
 </td>
 <td>
-Developers :
+Lab Developers :
 <li> Dr. Ajith K M | NITK</li> 
 <li> Dr. K V Gangadharan | NITK</li></br>
   
