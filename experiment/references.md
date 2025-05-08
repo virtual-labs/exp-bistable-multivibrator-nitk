@@ -1,5 +1,3 @@
-### Reference
-
 <table style="text-align:justify;">
 <tr style="background-color: white">
 <th>References</th>
@@ -12,14 +10,18 @@
 </ol>
 </td>
 <td>
-Developer : Dr. Ajith K M | NITK</br> Developer : Dr. K V Gangadharan | NITK</br></br>
+Lab Developers :
+<li> Dr. Ajith K M | NITK</li> 
+<li> Dr. K V Gangadharan | NITK</li></br>
+  
 Contributors :
-<ul style="list-style-type: none;">
-<li> Shwetha              | NITK</li>
-<li> Sibeesh Padiyoor     | NITK</li>
+<li>  Sibeesh Padiyoor (177PH002) | NITK</li>
 <li> Muhammed Mansoor CB  | NITK</li>
+<li> Prajna             | NITK</li>
+<li> Vismaya M Kumar     | NITK</li>
 <li> Akshaya              | NITK</li>
 <li> Anusha B Salian      | NITK</li>
-</ul></td>
+
+</td>
 </tr>
 </table>
