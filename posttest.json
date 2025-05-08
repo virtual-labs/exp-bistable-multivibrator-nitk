@@ -1,0 +1,90 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": " Monostable multivibrators can be used as",
+      "answers": {
+        "a": "pulse generator",
+        "b": "pulse stretcher",
+        "c": "pulse looser",
+        "d": "pulse motor"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "A multivibrator is an electronic circuit used to implement ____________",
+      "answers": {
+        "a": "Oscillator",
+        "b": "Timer",
+        "c": "Flip-flop",
+        "d": "All of the Mentioned"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Multivibrators are characterized by ____________",
+      "answers": {
+        "a": "Registers",
+        "b": "Capacitors",
+        "c": "Transistors",
+        "d": "All of the Mentioned"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "The bistable circuit is also known as ____________.",
+      "answers": {
+        "a": "Latch",
+        "b": "Gate",
+        "c": "Flip-flop",
+        "d": "Bidirectional circuit"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "A bistable multivibrator is a",
+      "answers": {
+        "a": "free running oscillator",
+        "b": "triggered oscillator",
+        "c": "sawtooth wave generator",
+        "d": "crystal oscillator "
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    }
+    ]
+}
