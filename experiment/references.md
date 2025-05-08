@@ -15,8 +15,8 @@ Lab Developers :
 <li> Dr. K V Gangadharan | NITK</li></br>
   
 Contributors :
-<li> Shwetha              | NITK</li>
-<li> Sibeesh Padiyoor     | NITK</li>
+<li> Prajna             | NITK</li>
+<li>  Sibeesh Padiyoor (177PH002) | NITK</li>
 <li> Vismaya M Kumar     | NITK</li>
 <li> Muhammed Mansoor CB  | NITK</li>
 <li> Akshaya              | NITK</li>
