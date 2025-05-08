@@ -16,7 +16,7 @@ Lab Developers :
   
 Contributors :
 <li> Prajna             | NITK</li>
-<li>  Sibeesh Padiyoor (177PH002)        | NITK</li>
+<li>  Sibeesh Padiyoor (177PH002) | NITK</li>
 <li> Vismaya M Kumar     | NITK</li>
 <li> Muhammed Mansoor CB  | NITK</li>
 <li> Akshaya              | NITK</li>
